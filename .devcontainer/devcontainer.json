@@ -1,0 +1,19 @@
+{
+    "name": "Flask Course Environment",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+    "features": {
+        "docker-in-docker": "latest"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+    ],
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+    },
+    "postCreateCommand": "pip install flask",
+    "forwardPorts": [
+        5000
+    ],
+    "remoteUser": "vscode"
+}
