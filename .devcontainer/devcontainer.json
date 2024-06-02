@@ -11,7 +11,7 @@
     "settings": {
         "python.pythonPath": "/usr/local/bin/python"
     },
-    "postCreateCommand": "pip install flask",
+    "postCreateCommand": "pip install -r requirements.txt",
     "forwardPorts": [
         5000
     ],
