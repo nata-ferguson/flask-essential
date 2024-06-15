@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if user.is_admin %}
+    <p>Review new submissions.</p>
+    {% else %}
+    <p>Check out new articles</p>
+    {% endif %}
+
+    <ul>
+        {% for article in articles %}
+        <li>{{ article }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
