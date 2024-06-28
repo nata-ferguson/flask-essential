@@ -11,7 +11,7 @@
     "settings": {
         "python.pythonPath": "/usr/local/bin/python"
     },
-    "postCreateCommand": "pip install -r requirements.txt",
+    "postCreateCommand": "pip install -r requirements.txt && sed -i 's/from flask import Markup/from markupsafe import Markup/' /usr/local/lib/python3.9/site-packages/flask_wtf/recaptcha/widgets.py",
     "forwardPorts": [
         5000
     ],
