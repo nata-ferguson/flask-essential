@@ -11,7 +11,7 @@
     "settings": {
         "python.pythonPath": "/usr/local/bin/python"
     },
-    "postCreateCommand": "pip install -r requirements.txt && sed -i 's/from flask import Markup/from markupsafe import Markup/' /usr/local/lib/python3.9/site-packages/flask_wtf/recaptcha/widgets.py",
+    "postCreateCommand": "pip install -r requirements.txt && python -c \"import site; import os; site_packages = site.getsitepackages()[0]; file_path = os.path.join(site_packages, 'flask_wtf', 'recaptcha', 'widgets.py'); with open(file_path, 'r') as file: content = file.read(); content = content.replace('from flask import Markup', 'from markupsafe import Markup'); with open(file_path, 'w') as file: file.write(content)\"",
     "forwardPorts": [
         5000
     ],
