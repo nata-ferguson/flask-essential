@@ -14,9 +14,9 @@ db = SQLAlchemy(app)
 def form():
     form = MyForm()
     if request.method == 'POST' and form.validate_on_submit():
-        name = form.name.data
+        username = form.username.data
         email = form.email.data
-        return render_template('success.html', name=name, email=email)
+        return render_template('success.html', username=username, email=email)
     return render_template('form.html', form=form)
 
 if __name__ == '__main__':

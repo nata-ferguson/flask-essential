@@ -8,9 +8,9 @@ app.secret_key = 'supersecretkey'
 def form():
     form = MyForm()
     if form.validate_on_submit():
-        name = form.name.data
+        username = form.username.data
         email = form.email.data
-        return f"Hello, {name}! We’ve received your email: {email}."
+        return f"Hello, {username}! We’ve received your email: {email}."
     return render_template('form.html', form=form)
 
 if __name__ == '__main__':

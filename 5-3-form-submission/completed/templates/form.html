@@ -7,7 +7,7 @@
     <h1>Enter Your Details</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
-        {{ form.name.label }} {{ form.name(size=20) }}
+        {{ form.username.label }} {{ form.username(size=20) }}
         {{ form.email.label }} {{ form.email(size=20) }}
         {{ form.submit() }}
       </form>

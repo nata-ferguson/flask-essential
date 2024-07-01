@@ -8,7 +8,7 @@ app.secret_key = 'supersecretkey'
 def form():
     form = MyForm()
     if request.method == 'POST':
-        return f"Hello, {form.name.data}!"
+        return f"Hello, {form.username.data}!"
     return render_template('form.html', form=form)
 
 if __name__ == '__main__':
