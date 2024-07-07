@@ -3,9 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 import datetime
 
 app = Flask(__name__)
+
+#SQLAlchemy configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///health_tracker.db'
 db = SQLAlchemy(app)
 
+#create db model
 class HealthData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)
@@ -13,12 +16,14 @@ class HealthData(db.Model):
     meditation = db.Column(db.Integer, nullable=False)
     sleep = db.Column(db.Integer, nullable=False)
 
+#create db table
 db.create_all()
 
 @app.route('/')
 def home():
     return "Welcome to the Flask Chart.js Example!"
 
+#seed db with dummy data
 @app.route('/add_data')
 def add_data():
     # Add dummy data to the database
