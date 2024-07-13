@@ -9,6 +9,10 @@
             <form method="POST">
                 {{ form.hidden_tag() }}
                 <div class="form-group">
+                    {{ form.date.label(class="form-label") }}
+                    {{ form.date(class="form-control") }}
+                </div>
+                <div class="form-group">
                     {{ form.exercise.label(class="form-label") }}
                     {{ form.exercise(class="form-control") }}
                 </div>
