@@ -45,6 +45,9 @@ def form():
 def dashboard():
     # Retrieve all health data from the database
     all_data = HealthData.query.all()
+
+    #prepare data for charts
+    
     return render_template('dashboard.html', data=all_data)
 
 if __name__ == '__main__':

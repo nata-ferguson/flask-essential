@@ -3,11 +3,11 @@ from app import HealthData
 from datetime import datetime, timedelta
 import random
 
-# Clear the database
+# Clear the db, create new db
 db.drop_all()
 db.create_all()
 
-# Generate dummy data for the past 3 months
+# Generate dummy data for the past 90 days
 start_date = datetime.now() - timedelta(days=90)
 for i in range(90):
     date = start_date + timedelta(days=i)

@@ -34,15 +34,18 @@
         </div>
     </div>
     <script>
+        // convert data passed from Python lists into JSON arrays to be used in JavaScript
         const dates = {{ dates|tojson }};
         const exerciseData = {{ exercise_data|tojson }};
         const meditationData = {{ meditation_data|tojson }};
         const sleepData = {{ sleep_data|tojson }};
 
+        //get the 2d drawing contexts for canvas elements where charts will be rendered
         const exerciseCtx = document.getElementById('exerciseChart').getContext('2d');
         const meditationCtx = document.getElementById('meditationChart').getContext('2d');
         const sleepCtx = document.getElementById('sleepChart').getContext('2d');
 
+        //create exercise chart
         new Chart(exerciseCtx, {
             type: 'bar',
             data: {
@@ -64,6 +67,7 @@
             }
         });
 
+        //create meditation chart
         new Chart(meditationCtx, {
             type: 'bar',
             data: {
@@ -85,6 +89,7 @@
             }
         });
 
+        //create sleep chart
         new Chart(sleepCtx, {
             type: 'bar',
             data: {
