@@ -4,3 +4,4 @@ instance/
 .webassets-cache
 .env
 venv/
+.vercel
